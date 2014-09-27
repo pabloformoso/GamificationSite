@@ -18,6 +18,7 @@ gem 'rmagick', require: false
 gem 'will_paginate', "~> 3.0"
 gem 'friendly_id', "~> 4.0.1"
 gem "faker"
+gem 'activeresource', :require => 'active_resource'
 
 #Oauth management
 gem 'omniauth'
