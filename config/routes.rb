@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root 'game#new'
+	resources :games
+	root to: 'games#new'
 end
