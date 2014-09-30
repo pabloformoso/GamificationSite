@@ -1,9 +1,13 @@
 <h1>Create your own game</h1>
-<%= form_for @game, :url => { :action => "create" }  do |f|  %>
-	<%= f.label :name %>
-    <%= f.text_field  :name %><br />
-    <%= f.label 'Action 1' %>
-    <%= f.text_field  :action1_text %>
-    <%= f.select :action1_points, (1..10) %><br />
-    <%= f.submit "Add game", class: "btn btn-primary" %>
+<%= form_for @game, :url => { :action => "create" }  do |game|  %>
+	<%= game.label :name %>
+    <%= game.text_field  :name %><br />
+    <% @game.actions.each_with_index do |action, index| %>
+    	<%= game.fields_for "actions[]", action do |action_fields| %>
+          <%= action_fields.text_field :text%>
+          <%= action_fields.select :points, (1..10) %>
+        <% end %>
+    <% end %>
+
+    <%= game.submit "Add game", class: "btn btn-primary" %>
  <%end%>
