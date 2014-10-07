@@ -1,0 +1,9 @@
+<h1>Log in</h1>
+<%= form_for(:player, url: login_path) do |player|  %>
+	<%= player.label :username %>
+    <%= player.text_field  :username %><br />
+    <%= player.label :password %>
+    <%= player.text_field  :password %><br />
+
+    <%= player.submit "Register", class: "btn btn-primary" %>
+ <%end%>

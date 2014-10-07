@@ -6,4 +6,7 @@ class PlayersController < ApplicationController
   def create
   	Player.new(params[:player]).save();
   end
+
+  def show
+  end
 end
